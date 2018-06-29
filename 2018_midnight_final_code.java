@@ -26,25 +26,6 @@ import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.drive.RobotDriveBase;
 
-/*
-while(RobotOn){
-	Robot.works();
-}
-//returns error "Kevin is dumb"
- * 
- * public static void teleop(String[] args)
- * if (Joystick1.pressed)
- * Robot.PutsCubeOnSwitch;
- * *if (Joystick2.pressed)
- * Robot.PutsCubeOnScale;
-** if (Joystick3.pressed)
- * Robot.PutsCubeInVault;
- * if (Joystick4.pressed)
- * Robot.Climbs;
- * if (Robot = Off)
- * 	Robot.DoesntWork;
-
-**/
 
 public class Robot extends SampleRobot {
 	// min value in x and y direction for robot to respond to joystick movements
@@ -193,23 +174,6 @@ public class Robot extends SampleRobot {
 			}
 	    });
 	    
-//	    do360.whenPressed(new InstantCommand(){
-//	    	@Override
-//	    	protected void execute() {
-//	    		double angle = gyro.getAngle(); // get current heading
-//	    		
-//	    		
-//	            double difference = angle + 360 ;
-//	            m_drive.arcadeDrive(0.4, difference*Kp); // drive towards heading 0
-//	           
-//	    		
-//	    		
-//	    		
-//			}
-//	    });
-	   
-	    
-	    
 	    flyLaunch.whenPressed(new InstantCommand(){
 	    	@Override
 	    	protected void execute() {
@@ -254,32 +218,6 @@ public class Robot extends SampleRobot {
 	    		}
 			}
 	    });
-	    
-//	    JoystickButton pneumaticOpen= new JoystickButton(stick, 9);
-//	    JoystickButton pneumaticClose= new JoystickButton(stick, 10);
-//	    pneumaticOpen.whenPressed(new InstantCommand(){
-//	    	@Override
-//			protected void execute() {
-//				System.out.println("pneumatic open");
-//		    	sol1.set(DoubleSolenoid.Value.kForward);
-//		    	//sol1.set(DoubleSolenoid.Value.kOf false);
-//			}
-//	    });
-//	    pneumaticClose.whenPressed(new InstantCommand(){
-//	    	@Override
-//			protected void execute() {
-//				System.out.println("pneumatic close");
-//		    	sol1.set(DoubleSolenoid.Value.kReverse);
-//		    	//sol1.set(DoubleSolenoid.Value.kOf false);
-//			}
-//	    });
-
-
-    }//end of public robot constructor 
-    
-    
-    
-    
     
     public void autoPause(){
     	back_Left.stopMotor();
@@ -615,10 +553,6 @@ public class Robot extends SampleRobot {
         		 step = 13;
         	 }
         	 
-        	 
-        	 
-        	 
-        	 
         	 ///Steps that occur when conditions are met
         	 if(step == 1){     		 
                  gyroDriveStraight();
@@ -773,98 +707,7 @@ public class Robot extends SampleRobot {
     			}
     		}
     	}
-    }
-
-    	
-    	
-//    	this.drive(0.4, 1, false);
-//    	System.out.println("eat");
-//    	this.drive(0.4, 1, false);
-//    	System.out.println("my");
-//    	this.drive(0.4, 1, false);
-//    	System.out.println("ass");
-//    	this.drive(0.4, 1, false);
-//    	System.out.println("eat");
-//    	this.drive(0.4, 1, false);
-//    	this.drive(0.4, 1, false);
-//    	System.out.println("eat");
-//    	this.drive(0.4, 1, false);
-//    	this.drive(0.4, 1, false);
-//    	System.out.println("eat");
-//    	this.drive(0.4, 1, false);
-//    	this.drive(0.4, 1, false);
-//    	System.out.println("eat");
-//    	this.drive(0.4, 1, false);
-//    	this.drive(0.4, 1, false);
-//    	
-
-    	
-
-    	
-
-    	/*String gameData;
-		gameData = DriverStation.getInstance().getGameSpecificMessage();
-		if(gameData.charAt(0) == 'L'){
-			//this.leftSideSwitchAuto();
-			this.drive(0.2, 5.05, false);
-
-		}
-		if(gameData.charAt(0) == 'R'){
-			//this.rightSideSwitchAuto();
-			//this.liftUp();
-	    	//this.stopLift();
-			this.drive(0.2, 5.05, false);
-			//sol1.set(DoubleSolenoid.Value.kReverse);
-   		 	//Timer.delay(1.5);
-   		 	//fly1.set(1);
-   		 	//fly2.set(1);
-   		 	//Timer.delay(1);
-            //fly1.set(-.18);
-   		 	//fly2.set(-.18);
-
-		}
-		else{
-			this.drive(0.2, 5.05, false);
-		}
-
-    
-    	//this.drive(0.2, 5.05, false);
-    */	
-    	//this.drive(0.6, 600, false);
-    	
-      
-    	
-
-		//this.drive(0.5, 1,  false);		
-		
-		
-    	/* 
-    	int switchOrScale = 3;
-    	//Switch = 0, Scale = 1; // Override = 3;
-    	int LMR = 0;
-    	//Left = 0, Middle = 1, Right = 2
-    	String gameData;
-		gameData = DriverStation.getInstance().getGameSpecificMessage();
-		if (switchOrScale == 0 ){
-			//The robot is going for the scale
-			if(gameData.length() > 0)
-	        {
-			 if(gameData.charAt(0) == 'L')
-			  {
-			
-	         }
-		}
-		else if (switchOrScale == 1){
-			//NOTE: THE SAME CODE FOR SCALE IS USED HERE. The main difference between the two will be the DISTANCES traveled by the robot.
-			if(gameData.length() > 0)
-	        {
-			 i
-		else if (switchOrScale == 3){
-			this.drive(.3, 10,  false);
-			
-
-		}    	
-    		
+    }  		
     	
     
     /**
@@ -896,7 +739,6 @@ public class Robot extends SampleRobot {
     			
     		}
     		
-    		//arcadeDrive.arcadeDrive(expY, expX);
     		
     	   	m_drive.arcadeDrive(expY,-expX,false);
     		
@@ -930,9 +772,6 @@ public class Robot extends SampleRobot {
         	if (disableLiftMotor) {
         		forkLiftMech.stopMotor();
         	}
-//        	if (forwardLimitSwitch.get()){
-//        		output = Math.min(output, 0);
-//        	}
         		
         	
         	// if the POV stick (hat switch) is moved to the forward position, accelerate the climbing mech motor
@@ -989,7 +828,9 @@ public class Robot extends SampleRobot {
     
  
     //reference: https://github.com/chopshop-166/frc-2017/blob/master/src/org/usfirst/frc/team166/robot/Robot.java
-    
+	
+	//AUTO?!?!
+
   /*  public void selectauto(){
     	switch(selected){
 	    	case "Autonomous 1":
