@@ -7,7 +7,10 @@
 
 package org.usfirst.frc.team4787.robot;
 
+import org.usfirst.frc.team4787.robot.subsystems.ExampleSubsystem;
+
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
@@ -23,7 +26,7 @@ public class Robot extends TimedRobot {
 	private static final String kCustomAuto = "My Auto";
 	private String m_autoSelected;
 	private SendableChooser<String> m_chooser = new SendableChooser<>();
-
+	public static Subsystem m_subsystem;
 	/**
 	 * This function is run when the robot is first started up and should be
 	 * used for any initialization code.
