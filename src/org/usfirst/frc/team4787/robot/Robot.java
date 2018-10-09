@@ -8,6 +8,7 @@
 package org.usfirst.frc.team4787.robot;
 
 import org.usfirst.frc.team4787.robot.subsystems.DriveTrain;
+import org.usfirst.frc.team4787.robot.subsystems.Flywheel;
 
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -27,6 +28,8 @@ public class Robot extends TimedRobot {
 	private String m_autoSelected;
 	private SendableChooser<String> m_chooser = new SendableChooser<>();
 	public static Subsystem m_driveTrain;
+	public static Subsystem m_flywheel;
+	public static OI m_OI;
 	/**
 	 * This function is run when the robot is first started up and should be
 	 * used for any initialization code.
@@ -34,6 +37,8 @@ public class Robot extends TimedRobot {
 	@Override
 	public void robotInit() {
 		m_driveTrain = new DriveTrain();
+		m_OI = new OI();
+		m_flywheel = new Flywheel();
 		m_chooser.addDefault("Default Auto", kDefaultAuto);
 		m_chooser.addObject("My Auto", kCustomAuto);
 		SmartDashboard.putData("Auto choices", m_chooser);

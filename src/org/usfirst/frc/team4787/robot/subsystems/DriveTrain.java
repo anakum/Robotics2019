@@ -45,7 +45,7 @@ public class DriveTrain extends Subsystem {
     }
     
     public void drive(Joystick joy) {
-    	
+    	this.drive(-joy.getY(), -joy.getThrottle());
     }
     
 }
