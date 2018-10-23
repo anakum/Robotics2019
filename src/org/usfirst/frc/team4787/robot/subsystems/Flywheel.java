@@ -2,6 +2,7 @@ package org.usfirst.frc.team4787.robot.subsystems;
 
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import org.usfirst.frc.team4787.robot.RobotMap;
 
 /**
  *
@@ -14,8 +15,8 @@ public class Flywheel extends Subsystem {
 	private Spark fly2;
 	
 	public Flywheel() {
-		fly1 = new Spark(5);
-		fly2 = new Spark(6);
+		fly1 = new Spark(RobotMap.motor_flywheel_left);
+		fly2 = new Spark(RobotMap.motor_flywheel_right);
 	}
 	
     public void initDefaultCommand() {

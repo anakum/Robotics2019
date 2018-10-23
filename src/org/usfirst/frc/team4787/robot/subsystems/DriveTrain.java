@@ -5,6 +5,7 @@ import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.Joystick;
+import org.usfirst.frc.team4787.robot.RobotMap;
 
 /**
  *
@@ -24,10 +25,10 @@ public class DriveTrain extends Subsystem {
 	public DriveTrain() {
 		super();
 		
-		front_left = new Talon(0);
-		back_left = new Talon(1);
-		front_right = new Talon(2);
-		back_right = new Talon(3);
+		front_left = new Talon(RobotMap.motor_front_left);
+		back_left = new Talon(RobotMap.motor_back_left);
+		front_right = new Talon(RobotMap.motor_front_right);
+		back_right = new Talon(RobotMap.motor_back_right);
 		motor_left = new SpeedControllerGroup(front_left, back_left);
 		motor_right = new SpeedControllerGroup(front_right, back_right); 
 		motor_drive = new DifferentialDrive(motor_left, motor_right);
