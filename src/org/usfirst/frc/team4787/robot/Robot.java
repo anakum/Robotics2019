@@ -31,6 +31,7 @@ public class Robot extends TimedRobot {
 	public static Subsystem m_driveTrain;
 	public static Subsystem m_flywheel;
 	public static Subsystem m_solenoid;
+	public static Subsystem m_forklift;
 	public static OI m_OI;
 	/**
 	 * This function is run when the robot is first started up and should be

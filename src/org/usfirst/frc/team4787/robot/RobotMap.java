@@ -7,6 +7,7 @@
 
 package org.usfirst.frc.team4787.robot;
 
+
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
  * to a variable name. This provides flexibility changing wiring, makes checking
@@ -33,4 +34,7 @@ public class RobotMap {
 	
 	public static int solenoid_pin1 = 7;
 	public static int solenoid_pin2 = 8;
+	
+	public static int forklift_mech1 = 9;
+	public static int forklift_mech2 = 10;
 }
