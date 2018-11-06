@@ -45,9 +45,16 @@ public class OI {
 	// button.whenReleased(new ExampleCommand());
 	
 	private Joystick m_Joystick = new Joystick(0);
-	
+	private double rx;
+	private double ry;
+	private boolean leftBumper;
+	private boolean rightBumper;
 	public OI() {
-		JoystickButton trigger = new JoystickButton(m_Joystick, 0);
+		//JoystickButton rightNub = new JoystickButton(m_Joystick, 0);
+		rx = m_Joystick.getRawAxis(4);
+		ry = m_Joystick.getRawAxis(5);
+		leftBumper = m_Joystick.getRawButton(5);
+		rightBumper = m_Joystick.getRawButton(6);
 	}
 	
 	public Joystick getJoystick() {

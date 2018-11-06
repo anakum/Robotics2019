@@ -45,9 +45,11 @@ public class DriveTrain extends Subsystem {
     	motor_drive.tankDrive(lSpeed, rSpeed);
     }
     
-    public void drive(Joystick joy) {
-    	this.drive(-joy.getY(), -joy.getThrottle());
-    }
+    //public void drive(Joystick joy) {
+    //	this.drive(-joy.getY(), -joy.getThrottle());
+    //}
     
+
+    ///umm this would not work??? 
 }
 

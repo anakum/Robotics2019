@@ -30,3 +30,4 @@ public class Flywheel extends Subsystem {
     }
 }
 
+//add the implementation of the controller here, after figuring it out for drivetrain
