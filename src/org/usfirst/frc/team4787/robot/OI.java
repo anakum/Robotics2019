@@ -45,8 +45,8 @@ public class OI {
 	// button.whenReleased(new ExampleCommand());
 	
 	private Joystick m_Joystick = new Joystick(0);
-	private double rx;
-	private double ry;
+	private static double rx;
+	private static double ry;
 	private boolean leftBumper;
 	private boolean rightBumper;
 	public OI() {
@@ -59,6 +59,14 @@ public class OI {
 	
 	public Joystick getJoystick() {
 		return m_Joystick;
+	}
+	
+	public static double getRx() {
+		return rx;
+	}
+	
+	public static double getRy() {
+		return ry;
 	}
 	
 }

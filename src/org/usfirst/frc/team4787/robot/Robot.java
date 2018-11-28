@@ -9,6 +9,7 @@ package org.usfirst.frc.team4787.robot;
 
 import org.usfirst.frc.team4787.robot.subsystems.DriveTrain;
 import org.usfirst.frc.team4787.robot.subsystems.Flywheel;
+import org.usfirst.frc.team4787.robot.subsystems.Forklift;
 import org.usfirst.frc.team4787.robot.subsystems.Solenoid;
 
 import edu.wpi.first.wpilibj.TimedRobot;
@@ -28,10 +29,10 @@ public class Robot extends TimedRobot {
 	private static final String kCustomAuto = "My Auto";
 	private String m_autoSelected;
 	private SendableChooser<String> m_chooser = new SendableChooser<>();
-	public static Subsystem m_driveTrain;
-	public static Subsystem m_flywheel;
-	public static Subsystem m_solenoid;
-	public static Subsystem m_forklift;
+	public static DriveTrain m_driveTrain;
+	public static Flywheel m_flywheel;
+	public static Solenoid m_solenoid;
+	public static Forklift m_forklift;
 	public static OI m_OI;
 	/**
 	 * This function is run when the robot is first started up and should be
