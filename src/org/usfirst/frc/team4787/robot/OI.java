@@ -49,6 +49,8 @@ public class OI {
 	private static double ry;
 	private boolean leftBumper;
 	private boolean rightBumper;
+	
+	
 	public OI() {
 		//JoystickButton rightNub = new JoystickButton(m_Joystick, 0);
 		rx = m_Joystick.getRawAxis(4);
