@@ -37,4 +37,6 @@ public class RobotMap {
 	
 	public static int forklift_mech1 = 9;
 	public static int forklift_mech2 = 10;
+	
+	public static int gyro = 11;
 }
