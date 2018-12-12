@@ -53,10 +53,15 @@ public class OI {
 	
 	public OI() {
 		//JoystickButton rightNub = new JoystickButton(m_Joystick, 0);
-		rx = m_Joystick.getRawAxis(4);
-		ry = m_Joystick.getRawAxis(5);
+		/**
+		rx = m_Joystick.getRawAxis(9);
+		ry = m_Joystick.getRawAxis(10);
+		System.out.println(rx);
 		leftBumper = m_Joystick.getRawButton(5);
 		rightBumper = m_Joystick.getRawButton(6);
+		**/
+		ry = Math.pow(-m_Joystick.getY(), 1);
+		rx = Math.pow(-m_Joystick.getX(), 1);
 	}
 	
 	public Joystick getJoystick() {
