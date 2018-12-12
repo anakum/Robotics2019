@@ -44,7 +44,7 @@ public class OI {
 	// until it is finished as determined by it's isFinished method.
 	// button.whenReleased(new ExampleCommand());
 	
-	private Joystick m_Joystick = new Joystick(0);
+	private static Joystick m_Joystick = new Joystick(0);
 	private static double rx;
 	private static double ry;
 	private boolean leftBumper;
@@ -60,8 +60,6 @@ public class OI {
 		leftBumper = m_Joystick.getRawButton(5);
 		rightBumper = m_Joystick.getRawButton(6);
 		**/
-		ry = Math.pow(-m_Joystick.getY(), 1);
-		rx = Math.pow(-m_Joystick.getX(), 1);
 	}
 	
 	public Joystick getJoystick() {
@@ -69,11 +67,14 @@ public class OI {
 	}
 	
 	public static double getRx() {
-		return rx;
+		return Math.pow(-m_Joystick.getX(), 1);
 	}
 	
 	public static double getRy() {
-		return ry;
+		return Math.pow(-m_Joystick.getY(), 1);
 	}
 	
+	public static double getRz() {
+		return Math.pow(m_Joystick.getZ(), 1);
+	}
 }

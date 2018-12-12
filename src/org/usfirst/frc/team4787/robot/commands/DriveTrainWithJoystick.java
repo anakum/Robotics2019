@@ -24,7 +24,8 @@ public class DriveTrainWithJoystick extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	//Robot.m_driveTrain.drive(Robot.m_OI.getJoystick());
-    	Robot.m_driveTrain.drive(OI.getRy(),OI.getRx());
+    	System.out.println("Executing");
+    	Robot.m_driveTrain.drive(OI.getRy(),OI.getRx(),OI.getRz());
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -34,7 +35,7 @@ public class DriveTrainWithJoystick extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
-    	Robot.m_driveTrain.drive(0,0);
+    	Robot.m_driveTrain.stopMotors();
     }
 
     // Called when another command which requires one or more of the same

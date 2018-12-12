@@ -7,6 +7,7 @@
 
 package org.usfirst.frc.team4787.robot;
 
+import org.usfirst.frc.team4787.robot.commands.DriveTrainWithJoystick;
 import org.usfirst.frc.team4787.robot.subsystems.DriveTrain;
 import org.usfirst.frc.team4787.robot.subsystems.Flywheel;
 import org.usfirst.frc.team4787.robot.subsystems.Forklift;
@@ -34,6 +35,7 @@ public class Robot extends TimedRobot {
 	public static Solenoid m_solenoid;
 	public static Forklift m_forklift;
 	public static OI m_OI;
+	public static DriveTrainWithJoystick m_joystickControl;
 	/**
 	 * This function is run when the robot is first started up and should be
 	 * used for any initialization code.
@@ -42,8 +44,9 @@ public class Robot extends TimedRobot {
 	public void robotInit() {
 		m_driveTrain = new DriveTrain();
 		m_OI = new OI();
-		m_flywheel = new Flywheel();
-		m_solenoid = new Solenoid();
+		m_joystickControl = new DriveTrainWithJoystick();
+		//m_flywheel = new Flywheel();
+		//m_solenoid = new Solenoid();
 		m_chooser.addDefault("Default Auto", kDefaultAuto);
 		m_chooser.addObject("My Auto", kCustomAuto);
 		SmartDashboard.putData("Auto choices", m_chooser);
@@ -89,6 +92,8 @@ public class Robot extends TimedRobot {
 	 */
 	@Override
 	public void teleopPeriodic() {
+		System.out.println(OI.getRx());
+		m_driveTrain.drive(OI.getRy(),OI.getRx(),OI.getRz());
 	}
 
 	/**
