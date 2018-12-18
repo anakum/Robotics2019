@@ -9,6 +9,7 @@ package org.usfirst.frc.team4787.robot;
 
 import org.usfirst.frc.team4787.robot.commands.DriveTrainWithJoystick;
 import org.usfirst.frc.team4787.robot.subsystems.DriveTrain;
+import org.usfirst.frc.team4787.robot.subsystems.DriveTrainGyro;
 import org.usfirst.frc.team4787.robot.subsystems.Flywheel;
 import org.usfirst.frc.team4787.robot.subsystems.Forklift;
 import org.usfirst.frc.team4787.robot.subsystems.Solenoid;
@@ -30,7 +31,7 @@ public class Robot extends TimedRobot {
 	private static final String kCustomAuto = "My Auto";
 	private String m_autoSelected;
 	private SendableChooser<String> m_chooser = new SendableChooser<>();
-	public static DriveTrain m_driveTrain;
+	public static DriveTrainGyro m_driveTrain;
 	public static Flywheel m_flywheel;
 	public static Solenoid m_solenoid;
 	public static Forklift m_forklift;
@@ -42,7 +43,7 @@ public class Robot extends TimedRobot {
 	 */
 	@Override
 	public void robotInit() {
-		m_driveTrain = new DriveTrain();
+		m_driveTrain = new DriveTrainGyro(1,1,1,1);
 		m_OI = new OI();
 		m_joystickControl = new DriveTrainWithJoystick();
 		//m_flywheel = new Flywheel();
@@ -92,8 +93,11 @@ public class Robot extends TimedRobot {
 	 */
 	@Override
 	public void teleopPeriodic() {
-		System.out.println(OI.getRx());
-		m_driveTrain.drive(OI.getRx(),-OI.getRy(),OI.getRz());
+		m_driveTrain.drive(-OI.getRx(),OI.getRy(),OI.getRz());
+		
+		if(OI.buttonDown(1)) {
+			m_driveTrain.setAngle(15);
+		}
 	}
 
 	/**

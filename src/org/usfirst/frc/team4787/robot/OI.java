@@ -77,4 +77,9 @@ public class OI {
 	public static double getRz() {
 		return Math.pow(m_Joystick.getZ(), 1);
 	}
+	
+	public static boolean buttonDown(int button) {
+		return m_Joystick.getRawButton(button);
+	
+	}
 }
