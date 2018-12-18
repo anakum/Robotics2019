@@ -93,7 +93,7 @@ public class Robot extends TimedRobot {
 	@Override
 	public void teleopPeriodic() {
 		System.out.println(OI.getRx());
-		m_driveTrain.drive(OI.getRy(),OI.getRx(),OI.getRz());
+		m_driveTrain.drive(OI.getRx(),-OI.getRy(),OI.getRz());
 	}
 
 	/**
