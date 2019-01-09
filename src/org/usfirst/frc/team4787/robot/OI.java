@@ -49,10 +49,12 @@ public class OI {
 	private static double ry;
 	private boolean leftBumper;
 	private boolean rightBumper;
+	private boolean cannonTrigger;
 	
 	
 	public OI() {
 		//JoystickButton rightNub = new JoystickButton(m_Joystick, 0);
+		cannonTrigger = m_Joystick.getRawButton(1);
 		/**
 		rx = m_Joystick.getRawAxis(9);
 		ry = m_Joystick.getRawAxis(10);

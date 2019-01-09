@@ -23,6 +23,7 @@ public class DriveTrain extends Subsystem {
 	private Talon back_left;
 	private Talon front_right;
 	private Talon back_right;
+	//private TankDrive motor_drive;
 	private MecanumDrive motor_drive;
 	
 	public DriveTrain() {

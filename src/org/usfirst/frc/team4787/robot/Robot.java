@@ -8,6 +8,7 @@
 package org.usfirst.frc.team4787.robot;
 
 import org.usfirst.frc.team4787.robot.commands.DriveTrainWithJoystick;
+import org.usfirst.frc.team4787.robot.subsystems.Cannon;
 import org.usfirst.frc.team4787.robot.subsystems.DriveTrain;
 import org.usfirst.frc.team4787.robot.subsystems.DriveTrainGyro;
 import org.usfirst.frc.team4787.robot.subsystems.Flywheel;
@@ -31,19 +32,21 @@ public class Robot extends TimedRobot {
 	private static final String kCustomAuto = "My Auto";
 	private String m_autoSelected;
 	private SendableChooser<String> m_chooser = new SendableChooser<>();
-	public static DriveTrainGyro m_driveTrain;
+	public static DriveTrain m_driveTrain;
 	public static Flywheel m_flywheel;
 	public static Solenoid m_solenoid;
 	public static Forklift m_forklift;
 	public static OI m_OI;
 	public static DriveTrainWithJoystick m_joystickControl;
+	public static Cannon m_Cannon;
+	public static Cannon m_Cannon2;
 	/**
 	 * This function is run when the robot is first started up and should be
 	 * used for any initialization code.
 	 */
 	@Override
 	public void robotInit() {
-		m_driveTrain = new DriveTrainGyro(1,1,1,1);
+		m_driveTrain = new DriveTrain();
 		m_OI = new OI();
 		m_joystickControl = new DriveTrainWithJoystick();
 		//m_flywheel = new Flywheel();
@@ -95,9 +98,9 @@ public class Robot extends TimedRobot {
 	public void teleopPeriodic() {
 		m_driveTrain.drive(-OI.getRx(),OI.getRy(),OI.getRz());
 		
-		if(OI.buttonDown(1)) {
-			m_driveTrain.setAngle(15);
-		}
+		//if(OI.buttonDown(1)) {
+		//	m_driveTrain.setAngle(15);
+		//}
 	}
 
 	/**
