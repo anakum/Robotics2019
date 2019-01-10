@@ -6,7 +6,7 @@ import org.usfirst.frc.team4787.robot.RobotMap;
 /**
  *
  */
-public class Cannon extends Subsystem {
+public class Cannon extends Solenoid {
 
   private MOTORINPUTCORRECTOBJECT angle_motor;
 
