@@ -39,7 +39,6 @@ public class Robot extends TimedRobot {
 	public static OI m_OI;
 	public static DriveTrainWithJoystick m_joystickControl;
 	public static Cannon m_Cannon;
-	public static Cannon m_Cannon2;
 	/**
 	 * This function is run when the robot is first started up and should be
 	 * used for any initialization code.
@@ -49,7 +48,8 @@ public class Robot extends TimedRobot {
 		m_driveTrain = new DriveTrain();
 		m_OI = new OI();
 		m_joystickControl = new DriveTrainWithJoystick();
-		//m_flywheel = new Flywheel();
+		m_Cannon = new Cannon();
+    //m_flywheel = new Flywheel();
 		//m_solenoid = new Solenoid();
 		m_chooser.addDefault("Default Auto", kDefaultAuto);
 		m_chooser.addObject("My Auto", kCustomAuto);

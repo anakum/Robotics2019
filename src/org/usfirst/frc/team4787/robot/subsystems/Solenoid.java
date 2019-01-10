@@ -1,32 +1,32 @@
 package org.usfirst.frc.team4787.robot.subsystems;
 
-import edu.wpi.first.wpilibj.DoubleSolenoid;
+import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 import org.usfirst.frc.team4787.robot.RobotMap;
 /**
  *
  */
-public class Solenoid extends Subsystem {
+public class SolenoidSubsystem extends Subsystem {
 
-	private DoubleSolenoid sol; 
+	private Solenoid sol; 
 	
-	public Solenoid() {
+	public SolenoidSubsystem(solenoidPin) {
 		super();
 		
-		sol = new DoubleSolenoid(RobotMap.solenoid_pin1, RobotMap.solenoid_pin2);
+		sol = new Solenoid(solenoidPin);
 	}
 	
-	public void setPosition(DoubleSolenoid.Value value) {
+	public void set(boolean value) {
 		sol.set(value);
 	}
 	
-    // Put methods for controlling this subsystem
-    // here. Call these from Commands.
+  // Put methods for controlling this subsystem
+  // here. Call these from Commands.
 
-    public void initDefaultCommand() {
-        // Set the default command for a subsystem here.
-        //setDefaultCommand(new MySpecialCommand());
-    }
+  public void initDefaultCommand() {
+    // Set the default command for a subsystem here.
+    //setDefaultCommand(new MySpecialCommand());
+  }
 }
 
