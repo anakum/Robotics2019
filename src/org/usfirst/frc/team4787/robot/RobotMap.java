@@ -34,6 +34,8 @@ public class RobotMap {
 	
 	public static int solenoid_pin = 7;
 	
+	public static int cannon_pin = 8;
+	
 	public static int forklift_mech1 = 9;
 	public static int forklift_mech2 = 10;
 	

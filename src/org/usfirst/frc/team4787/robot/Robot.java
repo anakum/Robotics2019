@@ -13,7 +13,7 @@ import org.usfirst.frc.team4787.robot.subsystems.DriveTrain;
 import org.usfirst.frc.team4787.robot.subsystems.DriveTrainGyro;
 import org.usfirst.frc.team4787.robot.subsystems.Flywheel;
 import org.usfirst.frc.team4787.robot.subsystems.Forklift;
-import org.usfirst.frc.team4787.robot.subsystems.Solenoid;
+import org.usfirst.frc.team4787.robot.subsystems.SolenoidSubsystem;
 
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -34,7 +34,6 @@ public class Robot extends TimedRobot {
 	private SendableChooser<String> m_chooser = new SendableChooser<>();
 	public static DriveTrain m_driveTrain;
 	public static Flywheel m_flywheel;
-	public static Solenoid m_solenoid;
 	public static Forklift m_forklift;
 	public static OI m_OI;
 	public static DriveTrainWithJoystick m_joystickControl;
@@ -49,8 +48,6 @@ public class Robot extends TimedRobot {
 		m_OI = new OI();
 		m_joystickControl = new DriveTrainWithJoystick();
 		m_Cannon = new Cannon();
-    //m_flywheel = new Flywheel();
-		//m_solenoid = new Solenoid();
 		m_chooser.addDefault("Default Auto", kDefaultAuto);
 		m_chooser.addObject("My Auto", kCustomAuto);
 		SmartDashboard.putData("Auto choices", m_chooser);

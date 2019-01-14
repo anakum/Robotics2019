@@ -11,7 +11,7 @@ public class SolenoidSubsystem extends Subsystem {
 
 	private Solenoid sol; 
 	
-	public SolenoidSubsystem(solenoidPin) {
+	public SolenoidSubsystem(int solenoidPin) {
 		super();
 		
 		sol = new Solenoid(solenoidPin);

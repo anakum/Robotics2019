@@ -2,22 +2,24 @@ package org.usfirst.frc.team4787.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.DigitalOutput;
+import edu.wpi.first.wpilibj.Jaguar;
 import org.usfirst.frc.team4787.robot.RobotMap;
+
 /**
  *
  */
-public class Cannon extends Solenoid {
+public class Cannon extends SolenoidSubsystem {
 
-  private MOTORINPUTCORRECTOBJECT angle_motor;
+  private Jaguar angle_motor;
 
   public Cannon() {
-    super(RobotMap.solenoid_pin)
+    super(RobotMap.solenoid_pin);
 
-    angle_motor = new aasdflk;asdjfasd;klf;
+    angle_motor = new Jaguar(RobotMap.cannon_pin);
   }
 
-  public rotate(double value) {
-    angle_motor.method();
+  public void rotate(double value) {
+	 angle_motor.set(value);
   }
 
   // Put methods for controlling this subsystem
