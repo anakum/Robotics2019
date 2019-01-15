@@ -50,12 +50,15 @@ public class OI {
 	private boolean leftBumper;
 	private boolean rightBumper;
 	private boolean cannonTrigger;
-	
+	private boolean upTrigger;
+  private boolean downTrigger;
 	
 	public OI() {
 		//JoystickButton rightNub = new JoystickButton(m_Joystick, 0);
 		cannonTrigger = m_Joystick.getRawButton(1);
-		/**
+    cannonTrigger.whenPressed(new CannonFire());
+  
+    /**
 		rx = m_Joystick.getRawAxis(9);
 		ry = m_Joystick.getRawAxis(10);
 		System.out.println(rx);

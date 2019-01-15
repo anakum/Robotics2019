@@ -38,7 +38,8 @@ public class Robot extends TimedRobot {
 	public static OI m_OI;
 	public static DriveTrainWithJoystick m_joystickControl;
 	public static Cannon m_Cannon;
-	/**
+  
+  /**
 	 * This function is run when the robot is first started up and should be
 	 * used for any initialization code.
 	 */
@@ -95,9 +96,13 @@ public class Robot extends TimedRobot {
 	public void teleopPeriodic() {
 		m_driveTrain.drive(-OI.getRx(),OI.getRy(),OI.getRz());
 		
-		//if(OI.buttonDown(1)) {
-		//	m_driveTrain.setAngle(15);
-		//}
+
+		if(OI.buttonDown(2)) {
+			m_Cannon.rotate(0.5);
+		}
+    if(OI.buttonDown(3)) {
+      m_Cannon.rotate(-0.5)
+    }
 	}
 
 	/**
