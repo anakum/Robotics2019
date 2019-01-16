@@ -37,8 +37,8 @@ public class Robot extends TimedRobot {
 	public static Forklift m_forklift;
 	public static OI m_OI;
 	public static DriveTrainWithJoystick m_joystickControl;
-	public static Cannon m_Cannon;
-  
+	public static Cannon m_Cannon = new Cannon();
+	public static boolean isRunning = false;
   /**
 	 * This function is run when the robot is first started up and should be
 	 * used for any initialization code.
@@ -48,7 +48,7 @@ public class Robot extends TimedRobot {
 		m_driveTrain = new DriveTrain();
 		m_OI = new OI();
 		m_joystickControl = new DriveTrainWithJoystick();
-		m_Cannon = new Cannon();
+		//m_Cannon = new Cannon();
 		m_chooser.addDefault("Default Auto", kDefaultAuto);
 		m_chooser.addObject("My Auto", kCustomAuto);
 		SmartDashboard.putData("Auto choices", m_chooser);
@@ -96,13 +96,37 @@ public class Robot extends TimedRobot {
 	public void teleopPeriodic() {
 		m_driveTrain.drive(-OI.getRx(),OI.getRy(),OI.getRz());
 		
-
-		if(OI.buttonDown(2)) {
-			m_Cannon.rotate(0.5);
+		
+		if(OI.buttonDown(1) && !isRunning) {
+			Thread fireThread = new Thread() {
+				public void run() {
+					try {
+						m_Cannon.set(1);
+						Thread.sleep(100);
+						m_Cannon.set(0);
+						Thread.sleep(200);
+						m_Cannon.set(-1);
+						Thread.sleep(100);
+						m_Cannon.set(0);
+						Thread.sleep(200);
+						isRunning = false;
+					}
+					catch(InterruptedException v) {
+						System.out.print(v);
+					}
+				}
+			};
+			isRunning = true;
+			fireThread.start();
 		}
-    if(OI.buttonDown(3)) {
-      m_Cannon.rotate(-0.5)
-    }
+		
+		m_Cannon.rotate(0);
+		if(OI.buttonDown(2)) {
+			m_Cannon.rotate(0.25);
+		}
+		if(OI.buttonDown(3)) {
+			m_Cannon.rotate(-0.25);
+		}
 	}
 
 	/**

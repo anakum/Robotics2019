@@ -15,8 +15,8 @@ public class Flywheel extends Subsystem {
 	private Spark fly2;
 	
 	public Flywheel() {
-		fly1 = new Spark(RobotMap.motor_flywheel_left);
-		fly2 = new Spark(RobotMap.motor_flywheel_right);
+		//fly1 = new Spark(RobotMap.motor_flywheel_left);
+		//fly2 = new Spark(RobotMap.motor_flywheel_right);
 	}
 	
     public void initDefaultCommand() {
@@ -25,8 +25,8 @@ public class Flywheel extends Subsystem {
     }
     
     public void setSpeed(double speed) {
-    	fly1.set(speed);
-    	fly2.set(-speed);
+    	//fly1.set(speed);
+    	//fly2.set(-speed);
     }
 }
 

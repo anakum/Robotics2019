@@ -11,7 +11,7 @@ import org.usfirst.frc.team4787.robot.RobotMap;
 public class SolenoidSubsystem extends Subsystem {
 
 	//private Solenoid sol; 
-	private Jaguar sol_controller
+	private Jaguar sol_controller;
 
 	public SolenoidSubsystem(int solenoidPin) {
 		super();
@@ -19,17 +19,13 @@ public class SolenoidSubsystem extends Subsystem {
 		sol_controller = new Jaguar(solenoidPin);
 	}
 	
-	public void set(boolean isOn) {
-		if(isOn){
-      sol_controller.set(1);
-    }
-    else {
-      sol_controller.set(-1)
-    }
+	public void set(double value) {
+		//System.out.println("Set solenoid");
+			sol_controller.set(value);
 	}
 
   public void stop() {
-    sol_controller.set(0)
+    sol_controller.set(0);
   }
 	
   // Put methods for controlling this subsystem

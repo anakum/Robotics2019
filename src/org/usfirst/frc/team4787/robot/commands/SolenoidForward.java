@@ -13,7 +13,7 @@ public class SolenoidForward extends Command {
     public SolenoidForward() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-    	requires(Robot.m_solenoid);
+    	//requires(Robot.m_solenoid);
     }
 
     // Called just before this Command runs the first time
@@ -22,7 +22,7 @@ public class SolenoidForward extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.m_solenoid.setPosition(DoubleSolenoid.Value.kForward);
+    	//Robot.m_solenoid.setPosition(DoubleSolenoid.Value.kForward);
     	
     }
 
@@ -33,7 +33,7 @@ public class SolenoidForward extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
-    	Robot.m_solenoid.setPosition(DoubleSolenoid.Value.kOff);
+    	//Robot.m_solenoid.setPosition(DoubleSolenoid.Value.kOff);
     }
 
     // Called when another command which requires one or more of the same

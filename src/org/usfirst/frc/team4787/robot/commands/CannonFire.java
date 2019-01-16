@@ -17,11 +17,14 @@ public class CannonFire extends Command {
 
     }
 
-    // Called just before this Command runs the first time    protected void initialize() {    
+    protected void initialize() {  
+	
+    }
 
     public void start() {
       tStart = System.currentTimeMillis();
-      Robot.m_Cannon.set(true);
+      System.out.println("Start Fire");
+      Robot.m_Cannon.set(1);
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -34,13 +37,16 @@ public class CannonFire extends Command {
       long tDelta = tEnd - tStart;
       double elapsedSeconds = tDelta / 1000.0;
       if (elapsedSeconds > 0.2) {
+    	  System.out.println("End Fire");
     	  return true;
       }
       else if(elapsedSeconds > 0.15) {
-        Robot.m_Cannon.set(false);
+    	  System.out.println("end Fire");
+        Robot.m_Cannon.set(-1);
       }
       else if(elapsedSeconds > 0.05) {
-        Robot.m_Cannon.stop()
+    	  System.out.println("mid Fire");
+        Robot.m_Cannon.stop();
       }
       return false;
     }

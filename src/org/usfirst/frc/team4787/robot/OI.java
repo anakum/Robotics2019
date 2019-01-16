@@ -7,7 +7,10 @@
 
 package org.usfirst.frc.team4787.robot;
 
+import org.usfirst.frc.team4787.robot.commands.CannonFire;
+
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 
@@ -49,14 +52,14 @@ public class OI {
 	private static double ry;
 	private boolean leftBumper;
 	private boolean rightBumper;
-	private boolean cannonTrigger;
+	private Button cannonTrigger;
 	private boolean upTrigger;
-  private boolean downTrigger;
+    private boolean downTrigger;
 	
 	public OI() {
 		//JoystickButton rightNub = new JoystickButton(m_Joystick, 0);
-		cannonTrigger = m_Joystick.getRawButton(1);
-    cannonTrigger.whenPressed(new CannonFire());
+		//cannonTrigger = new JoystickButton(m_Joystick, 1);
+		//cannonTrigger.whenPressed(new CannonFire());
   
     /**
 		rx = m_Joystick.getRawAxis(9);
